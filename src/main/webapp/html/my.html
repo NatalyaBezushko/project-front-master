@@ -1,0 +1,75 @@
+<html xmlns:http="http://www.w3.org/1999/xhtml">
+<head>
+    <title>RPG</title>
+    <script src=https://code.jquery.com/jquery-3.6.4.min.js></script>
+    <link href="/css/my.css" rel="stylesheet">
+</head>
+<body>
+<h1>RPG admin panel</h1>
+<table id="myTable">
+    <tr> <th>#</th> <th>Name</th> <th>Title</th> <th>Race</th> <th>Profession</th> <th>Level</th> <th>Birthday</th> <th>Banned</th> </tr>
+    <tr id="endOfTable"></tr>
+</table>
+<script>
+     $.get("/project_front_master_war_exploded/rest/players", function(data, status){
+       alert("Data: " + data + "\nStatus: " + status);
+    }).done(function (data, status) {
+         
+     });
+
+    // $.get("/project_front_master_war_exploded/rest/players", function( data ) {
+      //  $("myTable").html(data);
+        let string = JSON.stringify({
+            "id": 1,
+            "name": "Ниус",
+            "title": "Приходящий Без Шума",
+            "race": "HOBBIT",
+            "profession": "ROGUE",
+            "birthday": 1244497480000,
+            "banned": false,
+            "level": 33
+        }, {
+            "id": 2,
+            "name": "Никрашш",
+            "title": "НайтВульф",
+            "race": "ORC",
+            "profession": "WARRIOR",
+            "birthday": 1152424240000,
+            "banned": false,
+            "level": 58
+        }, {
+            "id": 4,
+            "name": "Эззэссэль",
+            "title": "шипящая",
+            "race": "DWARF",
+            "profession": "CLERIC",
+            "birthday": 1243201400000,
+            "banned": true,
+            "level": 3
+        });
+        for (let i = 0; i < string.length; i++) {
+            $("    <tr>\n" +
+                "        <td></td>" +
+                "        <td>" + "#" + "</td>\n" +
+                "        <td>" + name + "</td>\n" +
+                "        <td>" + "title" + "</td>\n" +
+                "        <td>" + "race" + "</td>\n" +
+                "         <td>" + "profession" + "</td>\n" +
+                " <td>" + "level" + "</td>\n" +
+                " <td>" + "birthday" + "</td>\n" +
+                " <td>" + "banned" + "</td>\n" +
+                "    </tr>").insertBefore("#endOfTheTable")
+        }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
